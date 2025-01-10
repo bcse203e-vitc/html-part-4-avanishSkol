@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizable Form Template</title>
+</head>
+<body>
+
+  <h1>Create Your Custom Form</h1>
+
+  <form action="/submit-form" method="post">
+    <label for="form-name">Form Name:</label><br>
+    <input type="text" id="form-name" name="form-name" placeholder="Enter form name" required><br><br>
+    <label for="num-fields">Number of Input Fields:</label><br>
+    <input type="number" id="num-fields" name="num-fields" min="1" max="10" required><br><br>
+    <label for="field-type">Field Type:</label><br>
+    <select id="field-type" name="field-type">
+      <option value="text">Text</option>
+      <option value="email">Email</option>
+      <option value="number">Number</option>
+      <option value="date">Date</option>
+    </select><br><br>
+    <label for="field-label">Field Label:</label><br>
+    <input type="text" id="field-label" name="field-label" placeholder="Enter label for the field" required><br><br>
+
+     <input type="submit" value="Create Form">
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 350px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .gender-group, .topics-group {
+      margin-bottom: 15px;
+    }
+
+    .gender-group label, .topics-group label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .topics-group input {
+      margin-right: 5px;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Event Registration</h1>
+    <form action="/register" method="post" onsubmit="return validateForm();">
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" required><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="example@domain.com" required><br>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{1,4}?[-.\s]?[0-9]{1,3}[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,4}$" required><br>
+      <div class="gender-group">
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+      </div>
+      <label for="age-group">Age Group:</label>
+      <select id="age-group" name="age-group" required>
+        <option value="">Select Age Group</option>
+        <option value="18-25">18-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36-45">36-45</option>
+        <option value="46-60">46-60</option>
+        <option value="60+">60+</option>
+      </select><br>
+      <div class="topics-group">
+        <label>Topics of Interest:</label><br>
+        <input type="checkbox" id="topic1" name="topics" value="Technology">
+        <label for="topic1">Technology</label>
+        <input type="checkbox" id="topic2" name="topics" value="Health">
+        <label for="topic2">Health</label>
+        <input type="checkbox" id="topic3" name="topics" value="Business">
+        <label for="topic3">Business</label>
+        <input type="checkbox" id="topic4" name="topics" value="Education">
+        <label for="topic4">Education</label>
+      </div>
+      <label for="comments">Additional Comments:</label><br>
+      <textarea id="comments" name="comments" rows="4" placeholder="Write any comments here..."></textarea><br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const ageGroup = document.getElementById('age-group').value;
+      if (!email || !phone || !gender || !ageGroup) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
