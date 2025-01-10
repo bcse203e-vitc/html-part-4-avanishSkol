@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz</title>
+</head>
+<body>
+  <h1>Online Quiz</h>
+  <form action="/submit-quiz" method="post">
+        <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label>Question 1: What is the capital of France?</label><br>
+    <input type="radio" id="paris" name="q1" value="paris" required>
+    <label for="paris">Paris</label><br>
+    <input type="radio" id="london" name="q1" value="london">
+    <label for="london">London</label><br>
+    <input type="radio" id="rome" name="q1" value="rome">
+    <label for="rome">Rome</label><br><br>
+    <label>Question 2: Select the colors of the flag of the United States</label><br>
+    <input type="checkbox" id="red" name="q2" value="red">
+    <label for="red">Red</label><br>
+    <input type="checkbox" id="blue" name="q2" value="blue">
+    <label for="blue">Blue</label><br>
+    <input type="checkbox" id="green" name="q2" value="green">
+    <label for="green">Green</label><br>
+    <input type="checkbox" id="white" name="q2" value="white">
+    <label for="white">White</label><br><br>
+    <label>Question 3: Which planet is known as the Red Planet?</label><br>
+    <input type="radio" id="mars" name="q3" value="mars" required>
+    <label for="mars">Mars</label><br>
+    <input type="radio" id="jupiter" name="q3" value="jupiter">
+    <label for="jupiter">Jupiter</label><br>
+    <input type="radio" id="venus" name="q3" value="venus">
+    <label for="venus">Venus</label><br><br>
+    <label for="timer">Time Remaining:</label><br>
+    <input type="text" id="timer" name="timer" value="Time remaining: 10:00 minutes" disabled><br><br>
+    <input type="submit" value="Submit Quiz">
+  </form>
+</body>
+</html>

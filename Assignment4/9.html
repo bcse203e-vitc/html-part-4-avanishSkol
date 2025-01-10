@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking Form</title>
+</head>
+<body>
+  <h1>Hotel Room Booking</h1>
+  <form action="/submit-booking" method="post">
+        <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="contact-info">Contact Information (Email):</label><br>
+    <input type="email" id="contact-info" name="contact-info" required><br><br>
+    <label for="check-in">Check-in Date:</label><br>
+    <input type="date" id="check-in" name="check-in" required><br><br>
+    <label for="check-out">Check-out Date:</label><br>
+    <input type="date" id="check-out" name="check-out" required><br><br>
+    <label for="guests">Number of Guests:</label><br>
+    <input type="number" id="guests" name="guests" min="1" required><br><br>
+    <label for="room-type">Room Type:</label><br>
+    <select id="room-type" name="room-type" required>
+      <option value="single">Single</option>
+      <option value="double">Double</option>
+      <option value="suite">Suite</option>
+    </select><br><br>
+    <label>Additional Services (Select any):</label><br>
+    <input type="checkbox" id="breakfast" name="services" value="breakfast">
+    <label for="breakfast">Breakfast</label><br>
+    <input type="checkbox" id="airport-pickup" name="services" value="airport-pickup">
+    <label for="airport-pickup">Airport Pickup</label><br><br>
+    <label for="total-cost">Estimated Total Cost:</label><br>
+    <input type="text" id="total-cost" name="total-cost" value="Total cost will be calculated based on room type and services" disabled><br><br>
+    <input type="submit" value="Book Room">
+  </form>
+</body>
+</html>
